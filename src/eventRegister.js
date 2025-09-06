@@ -1,4 +1,4 @@
-import { formRegister } from "./cliente.js";
+import { formRegister } from "./componentes/cliente.js";
 
 window.addEventListener('load', () => {
     const registro = document.getElementById('registerForm');

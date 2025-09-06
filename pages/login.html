@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Moto Accesorios LA103 | LOGIN</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header_logo">
+            <img class="header_logo_imagen" src="../emb/img/Icon-logo/logo-fondo.png" alt="Logo Moto Accesorios"
+                id="logo">
+            <h1 class="header_logo_titulo">Moto Accesorios LA103</h1>
+        </div>
+        <nav class="header_navegador">
+            <a class="header_navegador_a" href="../index.html">INICIO</a>
+            <a class="header_navegador_a" href="./productos.html">PRODUCTOS</a>
+            <a class="header_navegador_a" href="./nosotros.html">NOSOTROS</a>
+            <a class="header_navegador_a" href="./contacto.html">CONTACTO</a>
+        </nav>
+        <a href="/pages/registro.html" class="header_usuario_login" aria-label="Iniciar sesión">Register</a>
+    </header>
+    <main class="contenido_principal">
+        <video class="video_caja" autoplay muted loop>
+            <source src="../emb/video/MotoAccesoriosLA103.mp4" type="video/mp4">
+        </video>
+
+        <form class="formulario-contacto" id="loginForm">
+            <h2 class="formulario_titulo">🔑 Iniciar Sesión</h2>
+
+            <fieldset class="fieldset">
+                <legend class="legend">Acceso a la Cuenta</legend>
+
+                <label for="usuario">Email:</label>
+                <input type="text" id="usuario" name="UsuarioEmail" placeholder="Ingresa tu cuenta" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="Contraseña" placeholder="Ingresa tu contraseña" minlength="6"
+                    required>
+            </fieldset>
+
+            <input type="submit" value="Ingresar" class="btn-login">
+
+        </form>
+    </main>
+    <footer class="footer">
+        <h4 class="footer-final_texto">© 2025 Moto Accesorios LA103. Todos los derechos reservados.</h4>
+        <div class="redes">
+            <a href="https://www.facebook.com/" target="_blank"><img src="../emb/img/Icon-logo/facebook.png"
+                    alt="Facebook"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="../emb/img/Icon-logo/Instagram.png"
+                    alt="Instagram"></a>
+            <a href="https://wa.me/" target="_blank"><img src="../emb/img/Icon-logo/Whatsapp.png" alt="YouTube"></a>
+        </div>
+    </footer>
+</body>
+
+</html>
