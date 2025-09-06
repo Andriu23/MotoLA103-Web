@@ -1,0 +1,241 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*----- HEADER -----*/
+.header {
+    background-color: #1C1C1C;
+    color: #FFFFFF;
+    min-height: 20vh;
+    display: flex;
+    Justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header_logo_titulo {
+    color: #FFD700;
+}
+
+.header_logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#logo {
+    width: 20%;
+}
+
+.header_navegador {
+    width: 500px;
+    padding-top: 5px;
+    min-height: 55px;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+    flex-wrap: wrap;
+}
+
+.header_navegador_a {
+    background-color: #ffffff00;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 5px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.header_navegador_a:hover {
+    background-color: #FFD700;
+    color: #1C1C1C;
+}
+
+.header_usuario_login {
+    background-color: #FFD700;
+    color: #1C1C1C;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.header_usuario_login::before {
+    content: "\f007";
+    /* Unicode del ícono de usuario */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    /* 900 para solid */
+    margin-right: 0.5rem;
+}
+
+.header_usuario_login:hover {
+    background-color: #FFC107;
+    color: #1C1C1C;
+}
+
+/*----- MAIN -----*/
+
+.contenido_principal {
+    background-color: #00000080;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.video_caja {
+    background-color: #00000080;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: -10;
+}
+
+.formulario-contacto {
+    background-color: rgba(240, 240, 240, 0.9); 
+    min-width: 40%;
+    min-height: auto;
+    padding: 10px;
+    margin: 20px 0px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #FFFFFF;
+}
+
+.formulario_titulo {
+    padding: 10px 0px;
+    font-size: 24px;
+    display: grid;
+    place-items: center;
+    flex-wrap: wrap;
+}
+
+.fieldset {
+    width: 90%;
+    padding: 10px 0px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+
+.legend {
+    padding: 2px 5px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    background-color: #00008b33;
+    color: #ffffff;
+    text-align: start !important;
+}
+
+.fieldset label {
+    min-height: 20px;
+    font-size: 16px;
+    line-height: 2;
+    font-weight: bold;
+}
+
+.fieldset input, select {
+    min-height: 20px;
+    padding: 8px 2px;
+    border: none;
+    border-left: 2px double #357EDD;
+}
+
+.formulario-contacto input[type="submit"] {
+    margin: 10px auto;
+    background-color: rgba(0, 0, 139, 1);
+    color: rgba(255, 255, 0, 1);
+    padding: 10px 25px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.formulario-contacto input[type="submit"]:hover {
+    animation: neon 3s infinite alternate backwards;
+}
+
+.formulario-contacto input[type="submit"]:active {
+    background-color: #45a049;
+    color: #FFFFFF;
+}
+
+
+/*----- FOOTER -----*/
+
+.footer {
+    background-color: #000000;
+    color: #CCCCCC;
+    min-height: 12vh;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-final_texto {
+    margin-bottom: 0.5rem;
+}
+
+.redes {
+    min-width: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer .redes a img {
+    width: 32px;
+    margin: 0 0.5rem;
+    filter: brightness(0) invert(1);
+    /* Íconos blancos si son PNG oscuros */
+    transition: transform 0.3s;
+}
+
+.footer .redes a img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2) sepia(1) hue-rotate(30deg);
+}
+
+
+/* MEDIA QUERIES - TABLET*/
+
+@media screen and (max-width: 768px) {
+    .header_navegador {
+        align-items: start;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header_logo {
+        justify-content: center;
+    }
+
+    .header_logo_titulo {
+        text-align: center;
+    }
+
+    .header_navegador {
+        margin-top: 20px;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+}

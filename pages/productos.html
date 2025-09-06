@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/productos.css">
+    <script type="module" src="/src/script.js"></script>
+    <script type="module" src="/src/productos.js"></script>
+    <link rel="shortcut icon" href="../emb/img/Icon-logo/logo-fondo.png" type="image/x-icon">
+    <title>Moto Accesorios LA103 | Productos</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header_seccion">
+            <div class="header_logo">
+                <img class="header_logo_imagen" src="../emb/img/Icon-logo/logo-fondo.png" alt="Logo Moto Accesorios" id="logo">
+                <h1 class="header_logo_titulo">Moto Accesorios LA103</h1>
+            </div>
+            <nav class="header_navegador">
+                <a class="header_navegador_a" href="/index.html">INICIO</a>
+                <a class="header_navegador_a pagina" href="#">PRODUCTOS</a>
+                <a class="header_navegador_a" href="./nosotros.html">NOSOTROS</a>
+                <a class="header_navegador_a" href="./contacto.html">CONTACTO</a>
+            </nav>
+            <div class="header_usuario">
+                <div class="usuario_tienda">
+                    <span class="header_usuario_total">$000.00</span>
+                    <button class="header_usuario_carrito" aria-label="Ver carrito">🛒</button>
+                </div>
+                <a href="/pages/login.html" class="header_usuario_login" aria-label="Iniciar sesión">Login</a>
+            </div>
+        </div>
+        <section class="header_principal">
+            <div class="header_principal_img">
+                <h2 class="header_principal_titulo">PRODUCTOS</h2>
+            </div>
+        </section>
+    </header>
+    <main class="contenido">
+        <section class="filtro">
+            <h2>Elige lo mejor para tu moto y tu seguridad</h2>
+            <form class="form-filtro" aria-label="Filtro de categorías">
+                <fieldset class="checkbox">
+                    <legend>Tipos de productos</legend>
+                    <div class="checkbox-categoria">
+                        <input type="checkbox" name="categoria" id="categoria-proteccion">
+                        <label for="categoria-proteccion">Protección del conductor</label>
+                    </div>
+                    <div class="checkbox-categoria">
+                        <input type="checkbox" name="categoria" id="categoria-ropa-confort">
+                        <label for="categoria-ropa-confort">Ropa y confort</label>
+                    </div>
+                    <div class="checkbox-categoria">
+                        <input type="checkbox" name="categoria" id="categoria-transporte-carga">
+                        <label for="categoria-transporte-carga">Transporte y carga</label>
+                    </div>
+                    <div class="checkbox-categoria">
+                        <input type="checkbox" name="categoria" id="categoria-iluminacion-visibilidad">
+                        <label for="categoria-iluminacion-visibilidad">Iluminación y visibilidad</label>
+                    </div>
+                    <div class="checkbox-categoria">
+                        <input type="checkbox" name="categoria" id="categoria-tecnologia-conectividad">
+                        <label for="categoria-tecnologia-conectividad">Tecnología y conectividad</label>
+                    </div>
+                    <div class="checkbox-categoria">
+                        <input type="checkbox" name="categoria" id="categoria-mantenimiento-herramientas">
+                        <label for="categoria-mantenimiento-herramientas">Mantenimiento y herramientas</label>
+                    </div>
+                    <div class="checkbox-categoria">
+                        <input type="checkbox" name="categoria" id="categoria-personalizacion-estilo">
+                        <label for="categoria-personalizacion-estilo">Personalización y estilo</label>
+                    </div>
+                    <div class="checkbox-categoria">
+                        <input type="checkbox" name="categoria" id="categoria-seguridad">
+                        <label for="categoria-seguridad">Seguridad</label>
+                    </div>
+                </fieldset>
+                <fieldset class="buscar">
+                    <legend>¿Qué estás buscando?</legend>
+                        <input type="search" id="busqueda" name="busqueda" placeholder="Buscar...">
+                        <button type="submit">🔍 Buscar</button>
+                </fieldset>
+            </form>
+        </section>
+        <section class="productos">
+            <h2 class="productos_titulo">Productos</h2>
+            <div class="productos_articulos" id="productos">
+                
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <section class="seccion-formulario" aria-label="Suscripción al boletín">
+            <div class="formulario">
+                <img class="formulario_img" src="../emb/img/Icon-logo/Email.png" alt="Correo electrónico">
+                <div class="formulario_info">
+                    <h3>Regístrate aquí</h3>
+                    <p>Forma parte de nuestra comunidad</p>
+                </div>
+            </div>
+            <form class="registro" id="subscribeForm">
+                <fieldset class="registro_correo">
+                    <input type="email" id="email" placeholder="Dirección de correo electrónico" required>
+                    <input type="submit" value="Suscribirse">
+                </fieldset>
+            </form>
+        </section>
+        <section class="footer-principal">
+            <div class="principal_datos">
+                <img src="../emb/img/Icon-logo/Moto-fondo.png" alt="Logo Moto Accesorios">
+                <div class="principal_datos_contacto">
+                    <h3 class="principal_datos_contacto_titulo">Datos de Contacto</h3>
+                    <ul>
+                        <li class="contacto_telefono"><a href="tel:+573001112233">+57 313 469 7903</a></li>
+                        <li class="contacto_correo"><a href="mailto:contacto@motola103.co">contacto@motola103.co</a></li>
+                        <li class="contacto_direccion">Calle 63 # 103A-90, Bogotá, Colombia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="principal_enlaces">
+                <h3 class="principal_enlaces_titulo">Enlaces Útiles</h3>
+                <ul>
+                    <li><a href="/index.html">INICIO</a></li>
+                    <li><a href="#">PRODUCTOS</a></li>
+                    <li><a href="./nosotros.html">NOSOTROS</a></li>
+                    <li><a href="./contacto.html">CONTACTO</a></li>
+                </ul>
+            </div>
+            <div class="principal_accesorios">
+                <h3 class="principal_accesorios_titulo">Accesorios</h3>
+                <ul>
+                    <li>Protección del conductor</li>
+                    <li>Ropa y confort</li>
+                    <li>Transporte y carga</li>
+                    <li>Iluminación y visibilidad</li>
+                    <li>Tecnología y conectividad</li>
+                    <li>Mantenimiento y herramientas</li>
+                    <li>Personalización y estilo</li>
+                    <li>Seguridad</li>
+                </ul>
+            </div>
+            <div class="principal_seccion-pagos">
+                <h3 class="principal_seccion-pagos_titulo">Métodos de pago seguros</h3>
+                <div class="principal_seccion-pagos-descripcion">
+                    <img src="../emb/img/Icon-logo/PayU.png" alt="PayU">
+                    <img src="../emb/img/Icon-logo/PSE.png" alt="PSE">
+                    <img src="../emb/img/Icon-logo/Nequi.png" alt="Nequi">
+                    <img src="../emb/img/Icon-logo/DAVIPLATA.png" alt="DaviPlata">
+                </div>
+            </div>
+        </section>
+        <section class="footer-final">
+            <h4 class="footer-final_texto">© 2025 Moto Accesorios LA103. Todos los derechos reservados.</h4>
+            <div class="redes">
+                <a href="https://www.facebook.com/" target="_blank"><img src="../emb/img/Icon-logo/facebook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/" target="_blank"><img src="../emb/img/Icon-logo/Instagram.png" alt="Instagram"></a>
+                <a href="https://wa.me/" target="_blank"><img src="../emb/img/Icon-logo/Whatsapp.png" alt="YouTube"></a>
+            </div>
+        </section>
+    </footer>
+    <script type="module" src="/src/suscribirse.js" defer></script>
+</body>
+</html>
