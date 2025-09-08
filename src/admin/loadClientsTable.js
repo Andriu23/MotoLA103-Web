@@ -8,6 +8,18 @@ window.addEventListener('load', async () => {
             location.href = `/pages/admin/editClient.html?clientId=${clientId}`;
         });
     });
+
+    document.querySelectorAll(".button-Eliminar").forEach(button => {
+        button.addEventListener('click', async (event) => {
+            const clientId = event.target.id;
+            const userResponse = confirm('Esta seguro en eliminar el Cliente');
+            if (userResponse) {
+                await deleteClient(clientId);
+                alert('El cliente ha sido eliminado correctamente.');
+                location.href = '/pages/admin/clientsAdmin.html';
+            }
+        });
+    });
 });
 
 const crearTablaClientes = async () => {
@@ -118,4 +130,21 @@ const buttonComponent = (buttonLabel, id) => {
     button.style.cursor = "pointer";
     button.appendChild(document.createTextNode(buttonLabel));
     return button;
+};
+
+const deleteClient = async (id) => {
+    try {
+        /*const sessionToken = sessionStorage.getItem('accessToken');*/
+        let response = await fetch(`http://localhost:3000/api/clients/${id}`, 
+            {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    /*'Authorization': `${sessionToken}`*/
+                },
+        });
+        return response;
+    } catch (error) {
+        console.error('Hubo un error');
+    }
 };

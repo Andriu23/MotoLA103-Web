@@ -8,6 +8,18 @@ window.addEventListener('load', async () => {
             location.href = `/pages/admin/editContact.html?contactId=${contactId}`;
         });
     });
+
+    document.querySelectorAll(".button-Eliminar").forEach(button => {
+        button.addEventListener('click', async (event) => {
+            const contactId = event.target.id;
+            const userResponse = confirm('Esta seguro en eliminar el Contacto');
+            if (userResponse) {
+                await deleteContact(contactId);
+                alert('El contacto ha sido eliminado correctamente.');
+                location.href = '/pages/admin/contactsAdmin.html';
+            }
+        });
+    });
 });
 
 const crearTablaContacts = async () => {
@@ -106,4 +118,21 @@ const buttonComponent = (buttonLabel, id) => {
     button.style.cursor = "pointer";
     button.appendChild(document.createTextNode(buttonLabel));
     return button;
+};
+
+const deleteContact = async (id) => {
+    try {
+        /*const sessionToken = sessionStorage.getItem('accessToken');*/
+        let response = await fetch(`http://localhost:3000/api/contacts/${id}`, 
+            {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    /*'Authorization': `${sessionToken}`*/
+                },
+        });
+        return response;
+    } catch (error) {
+        console.error('Hubo un error');
+    }
 };
