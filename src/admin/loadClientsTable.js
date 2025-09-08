@@ -2,24 +2,30 @@ import { getDataClients } from "../componentes/cliente.js";
 
 window.addEventListener('load', async () => {
     await crearTablaClientes();
-    document.querySelectorAll(".button-Editar").forEach(button => {
-        button.addEventListener('click', (event) => {
-            const clientId = event.target.id;
-            location.href = `/pages/admin/editClient.html?clientId=${clientId}`;
+    const sessionToken = sessionStorage.getItem('accessToken');
+    if (sessionToken !== undefined && sessionToken !== null && sessionToken !== 'null') {
+        document.querySelectorAll(".button-Editar").forEach(button => {
+            button.addEventListener('click', (event) => {
+                const clientId = event.target.id;
+                location.href = `/pages/admin/editClient.html?clientId=${clientId}`;
+            });
         });
-    });
 
-    document.querySelectorAll(".button-Eliminar").forEach(button => {
-        button.addEventListener('click', async (event) => {
-            const clientId = event.target.id;
-            const userResponse = confirm('Esta seguro en eliminar el Cliente');
-            if (userResponse) {
-                await deleteClient(clientId);
-                alert('El cliente ha sido eliminado correctamente.');
-                location.href = '/pages/admin/clientsAdmin.html';
-            }
+        document.querySelectorAll(".button-Eliminar").forEach(button => {
+            button.addEventListener('click', async (event) => {
+                const clientId = event.target.id;
+                const userResponse = confirm('Esta seguro en eliminar el Cliente');
+                if (userResponse) {
+                    await deleteClient(clientId);
+                    alert('El cliente ha sido eliminado correctamente.');
+                    location.href = '/pages/admin/clientsAdmin.html';
+                }
+            });
         });
-    });
+    } else {
+        alert('Por favor Iniciar Sesión');
+        location.href = '../login.html';
+    }
 });
 
 const crearTablaClientes = async () => {
@@ -134,15 +140,13 @@ const buttonComponent = (buttonLabel, id) => {
 
 const deleteClient = async (id) => {
     try {
-        /*const sessionToken = sessionStorage.getItem('accessToken');*/
-        let response = await fetch(`http://localhost:3000/api/clients/${id}`, 
+        let response = await fetch(`http://localhost:3000/api/clients/${id}`,
             {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
-                    /*'Authorization': `${sessionToken}`*/
                 },
-        });
+            });
         return response;
     } catch (error) {
         console.error('Hubo un error');

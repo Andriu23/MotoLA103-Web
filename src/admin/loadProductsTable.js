@@ -1,49 +1,24 @@
 import { getDataProducts } from "../componentes/productos.js";
 
 window.addEventListener('load', async () => {
-    await crearTablaProductos();
-    document.querySelectorAll(".button-Editar").forEach(button => {
-        button.addEventListener('click', (event) => {
-            const productId = event.target.id;
-            location.href = `/pages/admin/editProduct.html?productId=${productId}`;
-        });
-    });
-
-    document.querySelectorAll(".button-Eliminar").forEach(button => {
-        button.addEventListener('click', async (event) => {
-            const productId = event.target.id;
-            const userResponse = confirm('Esta seguro en eliminar el Producto');
-            if (userResponse) {
-                await deleteProduct(productId);
-                alert('El producto ha sido eliminado correctamente.');
-                location.href = '/pages/admin/indexAdmin.html';
-            }
-        });
-    });
-});
-
-/*const URL_API = 'https://astro-tech-server.vercel.app'*/
-
-/*window.addEventListener('load', async () => {
     const sessionToken = sessionStorage.getItem('accessToken');
     if (sessionToken !== undefined && sessionToken !== null && sessionToken !== 'null') {
-        await createTablePlants();
-
+        await crearTablaProductos();
         document.querySelectorAll(".button-Editar").forEach(button => {
             button.addEventListener('click', (event) => {
-                const planetId = event.target.id;
-                location.href = `editPlant.html?planetId=${planetId}`;
+                const productId = event.target.id;
+                location.href = `/pages/admin/editProduct.html?productId=${productId}`;
             });
         });
 
         document.querySelectorAll(".button-Eliminar").forEach(button => {
             button.addEventListener('click', async (event) => {
                 const productId = event.target.id;
-                const userResponse = confirm('Esta seguro en eliminar el Planeta');
+                const userResponse = confirm('Esta seguro en eliminar el Producto');
                 if (userResponse) {
-                    await deletePlant(productId);
-                    alert('El planeta ha sido eliminado correctamente.');
-                    location.href = 'indexAdmin.html';
+                    await deleteProduct(productId);
+                    alert('El producto ha sido eliminado correctamente.');
+                    location.href = '/pages/admin/indexAdmin.html';
                 }
             });
         });
@@ -51,7 +26,9 @@ window.addEventListener('load', async () => {
         alert('Por favor Iniciar Sesión');
         location.href = '../login.html';
     }
-});*/
+});
+
+/*const URL_API = 'https://astro-tech-server.vercel.app'*/
 
 /**
  * Creación de la tabla dinamica de Productos
@@ -153,15 +130,15 @@ const buttonComponent = (buttonLabel, id) => {
 
 const deleteProduct = async (id) => {
     try {
-        /*const sessionToken = sessionStorage.getItem('accessToken');*/
-        let response = await fetch(`http://localhost:3000/api/products/${id}`, 
+        const sessionToken = sessionStorage.getItem('accessToken');
+        let response = await fetch(`http://localhost:3000/api/products/${id}`,
             {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
-                    /*'Authorization': `${sessionToken}`*/
+                    'Authorization': `${sessionToken}`
                 },
-        });
+            });
         return response;
     } catch (error) {
         console.error('Hubo un error');
