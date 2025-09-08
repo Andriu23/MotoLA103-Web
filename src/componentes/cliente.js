@@ -57,3 +57,12 @@ export const formRegister = async (event) => {
         alert('Ocurrió un error al procesar el registro.');
     }
 };
+
+export const getDataClients = async () => {
+    try {
+        let response = await fetch('http://localhost:3000/api/clients');
+        return await response.json();
+    } catch (error) {
+        console.error('Hubo un error');
+    }
+}

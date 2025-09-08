@@ -35,3 +35,12 @@ export const formSubmit = async (event) => {
         console.error(error);
     }
 };
+
+export const getDataContacts = async () => {
+    try {
+        let response = await fetch('http://localhost:3000/api/contacts');
+        return await response.json();
+    } catch (error) {
+        console.error('Hubo un error');
+    }
+}

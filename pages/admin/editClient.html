@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/login.css">
+    <script type="module" src="/src/admin/editClient.js" defer></script>
+    <title>Moto Accesorios LA103 | Admin</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header_logo">
+            <img class="header_logo_imagen" src="/emb/img/Icon-logo/logo-fondo.png" alt="Logo Moto Accesorios"
+                id="logo">
+            <h1 class="header_logo_titulo">Moto Accesorios LA103</h1>
+        </div>
+        <a href="/pages/login.html" class="header_usuario_login" aria-label="Iniciar sesión">Cerrar Sesión</a>
+    </header>
+    <main class="contenido_principal" id="formEditClient">
+        <video class="video_caja" autoplay muted loop preload="auto">
+            <source src="/emb/video/MotoAccesoriosLA103.mp4" type="video/mp4">
+        </video>
+        <div class="section_componentes">
+            <button class="consulta mostrar" id="client" onclick="location.href='/pages/admin/clientsAdmin.html'">Clientes</button>
+        </div>
+        <form class="formulario" id="editClientForm">
+            <h2 id="titulo">Editar Contacto</h2>
+            <fieldset class="fieldset">
+                <label for="id_client">id:</label>
+                <input type="text" id="id_client" disabled>
+                <label for="user">Usuario:</label>
+                <input type="text" id="user">
+                <label for="email">Email:</label>
+                <input type="email" id="email" disabled>
+                <label for="password">Teléfono:</label>
+                <input type="password" id="password" disabled>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" disabled>
+                <label for="contacto">Teléfono:</label>
+                <input type="text" id="contacto">
+            </fieldset>
+            <input type="submit" value="Actualizar">
+        </form>
+    </main>
+    <footer class="footer">
+        <h4 class="footer-final_texto">© 2025 Moto Accesorios LA103. Todos los derechos reservados.</h4>
+        <div class="redes">
+            <a href="https://www.facebook.com/" target="_blank"><img src="/emb/img/Icon-logo/facebook.png"
+                    alt="Facebook"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="/emb/img/Icon-logo/Instagram.png"
+                    alt="Instagram"></a>
+            <a href="https://wa.me/" target="_blank"><img src="/emb/img/Icon-logo/Whatsapp.png" alt="YouTube"></a>
+        </div>
+    </footer>
+</body>
+
+</html>

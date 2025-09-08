@@ -86,13 +86,14 @@ body {
 /*----- MAIN -----*/
 
 .contenido_principal {
-    background-color: #00000080;
+    /*background-color: #00000080;*/
+    background: linear-gradient(rgba(0, 8, 64, 0.2), rgba(0, 36, 128, 0.2));
+    width: 100%;
     min-height: 70vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
     position: relative;
 }
 
@@ -105,17 +106,7 @@ body {
     z-index: -10;
 }
 
-.formulario-contacto {
-    background-color: rgba(240, 240, 240, 0.9); 
-    min-width: 40%;
-    min-height: auto;
-    padding: 10px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    border-radius: 20px;
-    box-shadow: 0 0 30px #FFFFFF;
-}
+/* Estilo indexAdmin.html */
 
 .section_componentes {
     width: 80%;
@@ -155,95 +146,65 @@ body {
     display: none;
 }
 
-.formulario {
-    background-color: rgba(240, 240, 240, 0.9); 
-    width: 50%;
-    padding: 5px;
-    margin: 20px 0px;
+.table_data {
+    background-color: rgba(240, 240, 240, 0.8);
+    color: #000033;
+    margin-bottom: 20px;
+    width: 85%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px 0px;
     border-radius: 20px;
-    box-shadow: 0 0 30px #FFFFFF;
 }
 
-#titulo {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 24px;
+.tituloFormulario {
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
-.formulario_titulo {
-    padding: 10px 0px;
-    font-size: 24px;
-    display: grid;
-    place-items: center;
+.table-responsive {
+    width: auto;
+    display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
-.formulario fieldset {
-    min-width: 90%;
-}
-
-.formulario label {
-    margin-left: 20px;
-}
-
-.formulario input {
+.table {
+    max-width: 80%;
     text-align: center;
-}
-
-.fieldset {
-    width: 80%;
-    padding: 10px 0px;
-    margin: 0px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    border: none;
-}
-
-.legend {
-    padding: 2px 5px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    background-color: #00008b33;
-    color: #ffffff;
-    text-align: start !important;
-}
-
-.fieldset label {
     font-size: 16px;
-    line-height: 2;
-    font-weight: bold;
-}
-
-.fieldset input {
-    text-align: center;
-    padding: 8px 2px;
-    border: none;
-    border-radius: 2px;
-    border-left: 2px double #357EDD;
-}
-
-input[type="submit"] {
-    margin: 10px auto;
-    background-color: rgba(0, 0, 139, 1);
-    color: rgba(255, 255, 0, 1);
-    padding: 10px 25px;
-    border: 2px solid black;
+    background-color: #FFF;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.8); 
     border-radius: 5px;
+}
+
+.table thead {
+    background-color: rgba(255, 215, 0, 1); 
+    color: #000000;     
+}
+
+.table thead th {
+    padding: 8px 12px;
     font-weight: bold;
-    letter-spacing: 2px;
 }
 
-input[type="submit"]:hover {
-    animation: neon 3s infinite alternate backwards;
+.table tbody tr {
+    border-bottom: 1px solid #ddd;
 }
 
-input[type="submit"]:active {
-    background-color: #45a049;
-    color: #FFFFFF;
+.table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table tbody tr:hover {
+    background-color: #eae3d7;
+}
+
+.table tbody td {
+    padding: 8px 12px;
+    color: #444;
 }
 
 /*----- FOOTER -----*/

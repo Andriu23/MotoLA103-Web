@@ -74,5 +74,3 @@ export const getDataProducts = async () => {
         console.error('Hubo un error');
     }
 }
-
-

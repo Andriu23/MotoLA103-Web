@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/registro.css">
-    <script type="module" src="../src/componentes/cliente.js"></script>
-    <script type="module" src="../src/eventRegister.js"></script>
+    <script type="module" src="../src/componentes/cliente.js" defer></script>
+    <script type="module" src="../src/eventRegister.js" defer></script>
     <title>Moto Accesorios LA103 | Registro</title>
 </head>
 
@@ -29,7 +29,7 @@
         <a href="/pages/login.html" class="header_usuario_login" aria-label="Iniciar sesión">Login</a>
     </header>
     <main class="contenido_principal">
-        <video class="video_caja" autoplay muted loop>
+        <video class="video_caja" autoplay muted loop preload="auto">
             <source src="../emb/video/MotoAccesoriosLA103.mp4" type="video/mp4">
         </video>
 
