@@ -1,4 +1,4 @@
-/*const URL_API = 'https://moto-la-103-server.vercel.app';*/
+const URL_API = 'https://moto-la-103-server.vercel.app';
 
 export const crearProductos = (nombre, precio, imagen, categoria) => {
     const articulo = document.createElement('article');
@@ -70,7 +70,7 @@ export const fetchProductosData = (productosDataPayload) => {
 
 export const getDataProducts = async () => {
     try {
-        let response = await fetch('http://localhost:3000/api/products');
+        let response = await fetch(`${URL_API}/api/products`);
         return await response.json();
     } catch (error) {
         console.error('Hubo un error');

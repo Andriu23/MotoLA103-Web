@@ -1,6 +1,6 @@
 import { getDataContacts } from "../componentes/contacto.js";
 
-/*const URL_API = 'https://moto-la-103-server.vercel.app';*/
+const URL_API = 'https://moto-la-103-server.vercel.app';
 
 window.addEventListener('load', async () => {
     
@@ -132,7 +132,7 @@ const buttonComponent = (buttonLabel, id) => {
 const deleteContact = async (id) => {
     try {
         const sessionToken = sessionStorage.getItem('accessToken');
-        let response = await fetch(`http://localhost:3000/api/contacts/${id}`,
+        let response = await fetch(`${URL_API}/api/contacts/${id}`,
             {
                 method: 'DELETE',
                 headers: {

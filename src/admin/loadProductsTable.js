@@ -1,6 +1,6 @@
 import { getDataProducts } from "../componentes/productos.js";
 
-/*const URL_API = 'https://moto-la-103-server.vercel.app';*/
+const URL_API = 'https://moto-la-103-server.vercel.app';
 
 window.addEventListener('load', async () => {
     const sessionToken = sessionStorage.getItem('accessToken');
@@ -131,7 +131,7 @@ const buttonComponent = (buttonLabel, id) => {
 const deleteProduct = async (id) => {
     try {
         const sessionToken = sessionStorage.getItem('accessToken');
-        let response = await fetch(`http://localhost:3000/api/products/${id}`,
+        let response = await fetch(`${URL_API}/api/products/${id}`,
             {
                 method: 'DELETE',
                 headers: {

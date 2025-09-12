@@ -1,4 +1,4 @@
-/*const URL_API = 'https://moto-la-103-server.vercel.app';*/
+const URL_API = 'https://moto-la-103-server.vercel.app';
 
 window.addEventListener('load', async () => {
     const sessionToken = sessionStorage.getItem('accessToken');
@@ -38,7 +38,7 @@ window.addEventListener('load', async () => {
 const getDataProductById = async (id) => {
     try {
         const sessionToken = sessionStorage.getItem('accessToken');
-        let response = await fetch(`http://localhost:3000/api/products/${id}`,
+        let response = await fetch(`${URL_API}/api/products/${id}`,
             {
                 headers: {
                     'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ const getDataProductById = async (id) => {
 const updateProdcutData = async (img, name, price, category) => {
     try {
         const sessionToken = sessionStorage.getItem('accessToken');
-        let response = await fetch(`http://localhost:3000/api/products?nombre=${name}`,
+        let response = await fetch(`${URL_API}/api/products?nombre=${name}`,
             {
                 method: 'PUT',
                 headers: {

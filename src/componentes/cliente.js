@@ -1,4 +1,4 @@
-/*const URL_API = 'https://moto-la-103-server.vercel.app';*/
+const URL_API = 'https://moto-la-103-server.vercel.app';
 
 export const formRegister = async (event) => {
     event.preventDefault();
@@ -40,7 +40,7 @@ export const formRegister = async (event) => {
             nombreCompleto,
             contacto,
         };
-        await fetch('http://localhost:3000/api/clients', {
+        await fetch(`${URL_API}/api/clients`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ export const formRegister = async (event) => {
 
 export const getDataClients = async () => {
     try {
-        let response = await fetch('http://localhost:3000/api/clients');
+        let response = await fetch(`${URL_API}/api/clients`);
         return await response.json();
     } catch (error) {
         console.error('Hubo un error');

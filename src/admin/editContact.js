@@ -1,4 +1,4 @@
-/*const URL_API = 'https://moto-la-103-server.vercel.app';*/
+const URL_API = 'https://moto-la-103-server.vercel.app';
 
 window.addEventListener('load', async () => {
     const sessionToken = sessionStorage.getItem('accessToken');
@@ -40,7 +40,7 @@ window.addEventListener('load', async () => {
 const getDataContactById = async (id) => {
     try {
         const sessionToken = sessionStorage.getItem('accessToken');
-        let response = await fetch(`http://localhost:3000/api/contacts/${id}`, {
+        let response = await fetch(`${URL_API}/api/contacts/${id}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `${sessionToken}`
@@ -55,7 +55,7 @@ const getDataContactById = async (id) => {
 const updateContactData = async (name, telefono, medio) => {
     try {
         const sessionToken = sessionStorage.getItem('accessToken');
-        let response = await fetch(`http://localhost:3000/api/contacts?name=${name}`,
+        let response = await fetch(`${URL_API}/api/contacts?name=${name}`,
             {
                 method: 'PUT',
                 headers: {
