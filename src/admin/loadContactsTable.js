@@ -1,5 +1,7 @@
 import { getDataContacts } from "../componentes/contacto.js";
 
+const URL_API = 'https://moto-la-103-server.vercel.app';
+
 window.addEventListener('load', async () => {
     await crearTablaContacts();
     const sessionToken = sessionStorage.getItem('accessToken');
@@ -27,8 +29,6 @@ window.addEventListener('load', async () => {
         location.href = '../login.html';
     }
 });
-
-const URL_API = 'https://moto-la-103-server.vercel.app';
 
 const crearTablaContacts = async () => {
     const data = await getDataContacts();

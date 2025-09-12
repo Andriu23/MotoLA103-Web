@@ -1,5 +1,7 @@
 import { getDataProducts } from "../componentes/productos.js";
 
+const URL_API = 'https://moto-la-103-server.vercel.app';
+
 window.addEventListener('load', async () => {
     const sessionToken = sessionStorage.getItem('accessToken');
     if (sessionToken !== undefined && sessionToken !== null && sessionToken !== 'null') {
@@ -27,8 +29,6 @@ window.addEventListener('load', async () => {
         location.href = '../login.html';
     }
 });
-
-const URL_API = 'https://moto-la-103-server.vercel.app';
 
 /**
  * Creación de la tabla dinamica de Productos
