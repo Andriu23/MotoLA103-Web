@@ -28,7 +28,7 @@ window.addEventListener('load', async () => {
     }
 });
 
-/*const URL_API = 'https://astro-tech-server.vercel.app'*/
+const URL_API = 'https://moto-la-103-server.vercel.app';
 
 /**
  * Creación de la tabla dinamica de Productos
@@ -131,7 +131,7 @@ const buttonComponent = (buttonLabel, id) => {
 const deleteProduct = async (id) => {
     try {
         const sessionToken = sessionStorage.getItem('accessToken');
-        let response = await fetch(`http://localhost:3000/api/products/${id}`,
+        let response = await fetch(`${URL_API}/api/products/${id}`,
             {
                 method: 'DELETE',
                 headers: {

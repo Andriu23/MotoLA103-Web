@@ -1,3 +1,5 @@
+const URL_API = 'https://moto-la-103-server.vercel.app';
+
 export const formSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -22,7 +24,7 @@ export const formSubmit = async (event) => {
                 texto
             };
             console.log(mensajeCompleto);
-            await fetch('http://localhost:3000/api/contacts', {
+            await fetch(`${URL_API}/api/contacts`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -38,7 +40,7 @@ export const formSubmit = async (event) => {
 
 export const getDataContacts = async () => {
     try {
-        let response = await fetch('http://localhost:3000/api/contacts');
+        let response = await fetch(`${URL_API}/api/contacts`);
         return await response.json();
     } catch (error) {
         console.error('Hubo un error');

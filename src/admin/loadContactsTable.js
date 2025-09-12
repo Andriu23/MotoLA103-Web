@@ -28,6 +28,8 @@ window.addEventListener('load', async () => {
     }
 });
 
+const URL_API = 'https://moto-la-103-server.vercel.app';
+
 const crearTablaContacts = async () => {
     const data = await getDataContacts();
     const container = document.getElementById('contact_container');
@@ -128,7 +130,7 @@ const buttonComponent = (buttonLabel, id) => {
 
 const deleteContact = async (id) => {
     try {
-        let response = await fetch(`http://localhost:3000/api/contacts/${id}`,
+        let response = await fetch(`${URL_API}/api/contacts/${id}`,
             {
                 method: 'DELETE',
                 headers: {
