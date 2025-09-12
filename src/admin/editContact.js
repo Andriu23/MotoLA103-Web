@@ -1,4 +1,4 @@
-const URL_API = 'https://moto-la-103-server.vercel.app';
+/*const URL_API = 'https://moto-la-103-server.vercel.app';*/
 
 window.addEventListener('load', async () => {
     const sessionToken = sessionStorage.getItem('accessToken');
@@ -15,11 +15,10 @@ window.addEventListener('load', async () => {
         const half_input = document.getElementById('medio');
         const message_input = document.getElementById('mensaje');
 
-
         id_input.value = data._id;
         name_input.value = data.name;
         email_input.value = data.email;
-        telefono_input.value = Number(data.telefono);
+        telefono_input.value = Number(data.contacto);
         category_input.value = data.categoria;
         half_input.value = data.medio;
         message_input.value = data.texto;
@@ -40,9 +39,11 @@ window.addEventListener('load', async () => {
 
 const getDataContactById = async (id) => {
     try {
-        let response = await fetch(`${URL_API}/api/contacts/${id}`, {
+        const sessionToken = sessionStorage.getItem('accessToken');
+        let response = await fetch(`http://localhost:3000/api/contacts/${id}`, {
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `${sessionToken}`
             },
         });
         return await response.json();
@@ -53,14 +54,16 @@ const getDataContactById = async (id) => {
 
 const updateContactData = async (name, telefono, medio) => {
     try {
-        let response = await fetch(`${URL_API}/api/contacts?name=${name}`,
+        const sessionToken = sessionStorage.getItem('accessToken');
+        let response = await fetch(`http://localhost:3000/api/contacts?name=${name}`,
             {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Authorization': `${sessionToken}`
                 },
                 body: JSON.stringify({
-                    telefono: Number(telefono),
+                    contacto: Number(telefono),
                     medio: medio,
                 }),
             });

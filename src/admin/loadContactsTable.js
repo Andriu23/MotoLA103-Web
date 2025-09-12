@@ -1,11 +1,12 @@
 import { getDataContacts } from "../componentes/contacto.js";
 
-const URL_API = 'https://moto-la-103-server.vercel.app';
+/*const URL_API = 'https://moto-la-103-server.vercel.app';*/
 
 window.addEventListener('load', async () => {
-    await crearTablaContacts();
+    
     const sessionToken = sessionStorage.getItem('accessToken');
     if (sessionToken !== undefined && sessionToken !== null && sessionToken !== 'null') {
+        await crearTablaContacts();
         document.querySelectorAll(".button-Editar").forEach(button => {
             button.addEventListener('click', (event) => {
                 const contactId = event.target.id;
@@ -91,7 +92,7 @@ const createRows = (data) => {
         tableDataId.appendChild(document.createTextNode(element._id));
         tableHeadName.appendChild(document.createTextNode(element.name));
         tableHeadEmail.appendChild(document.createTextNode(element.email));
-        tableHeadContact.appendChild(document.createTextNode(element.telefono));
+        tableHeadContact.appendChild(document.createTextNode(element.contacto));
         tableHeadCategory.appendChild(document.createTextNode(element.categoria));
         tableHeadHalf.appendChild(document.createTextNode(element.medio));
         tableHeadMessage.appendChild(document.createTextNode(element.texto));
@@ -130,11 +131,13 @@ const buttonComponent = (buttonLabel, id) => {
 
 const deleteContact = async (id) => {
     try {
-        let response = await fetch(`${URL_API}/api/contacts/${id}`,
+        const sessionToken = sessionStorage.getItem('accessToken');
+        let response = await fetch(`http://localhost:3000/api/contacts/${id}`,
             {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Authorization': `${sessionToken}`
                 },
             });
         return response;

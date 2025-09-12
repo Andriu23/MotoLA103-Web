@@ -1,4 +1,4 @@
-const URL_API = 'https://moto-la-103-server.vercel.app';
+/*const URL_API = 'https://moto-la-103-server.vercel.app';*/
 
 window.addEventListener('load', async () => {
     const sessionToken = sessionStorage.getItem('accessToken');
@@ -6,9 +6,7 @@ window.addEventListener('load', async () => {
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const clientId = urlParams.get('clientId');
-        console.log(clientId)
         const data = await getDataClientById(clientId);
-        console.log(data);
         const id_input = document.getElementById('id_client');
         const user_input = document.getElementById('user');
         const email_input = document.getElementById('email');
@@ -39,9 +37,11 @@ window.addEventListener('load', async () => {
 
 const getDataClientById = async (id) => {
     try {
-        let response = await fetch(`${URL_API}/api/clients/${id}`, {
+        const sessionToken = sessionStorage.getItem('accessToken');
+        let response = await fetch(`http://localhost:3000/api/clients/${id}`, {
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `${sessionToken}`
             },
         });
         return await response.json();
@@ -52,11 +52,13 @@ const getDataClientById = async (id) => {
 
 const updateClientData = async (name, user, telefono) => {
     try {
-        let response = await fetch(`${URL_API}/api/clients?nombreCompleto=${name}`,
+        const sessionToken = sessionStorage.getItem('accessToken');
+        let response = await fetch(`http://localhost:3000/api/clients?nombreCompleto=${name}`,
             {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Authorization': `${sessionToken}`
                 },
                 body: JSON.stringify({
                     usuario: user,
