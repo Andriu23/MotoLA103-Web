@@ -71,12 +71,12 @@ body {
 }
 
 .header_usuario {
-  width: 250px;
   padding: 10px;
   font-size: 18px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  gap: 5px;
 }
 
 .header_usuario_total {

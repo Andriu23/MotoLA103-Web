@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/nosotros.css">
+    <script type="module" src="/src/componentes/nosotros.js"></script>
     <link rel="shortcut icon" href="../emb/img/Icon-logo/logo-fondo.png" type="image/x-icon">
     
     <title>Moto Accesorios LA103 | Nosotros</title>
@@ -26,8 +27,8 @@
             </nav>
             <div class="header_usuario">
                 <div class="usuario_tienda">
-                    <span class="header_usuario_total">$000.00</span>
-                    <button class="header_usuario_carrito" aria-label="Ver carrito">🛒</button>
+                    <span class="header_usuario_total" id="total-global">$000.00</span>
+                    <button class="header_usuario_carrito" aria-label="Ver carrito" id="btn-carrito">🛒<span id="cantidad-global">0</span></button>
                 </div>
                 <a href="/pages/login.html" class="header_usuario_login" aria-label="Iniciar sesión">Login</a>
             </div>
